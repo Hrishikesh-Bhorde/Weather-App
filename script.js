@@ -11,13 +11,17 @@ window.onload = function () {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "Replace with your own key",
+      "X-RapidAPI-Key": "replace with your API key",
       "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
     },
   };
 
+  const loadingSpinner = document.getElementById("loadingSpinner");
+
   async function fetchWeather(city) {
     try {
+      loadingSpinner.style.display = "block";
+
       const response = await fetch(url + city, options);
       const result = await response.json();
 
@@ -51,7 +55,11 @@ window.onload = function () {
       // console.log(formattedDateTime);
 
       console.log(result);
+      // Hide loading spinner and show weather info
+      loadingSpinner.style.display = "none";
     } catch (error) {
+      // Hide loading spinner and weather info
+      loadingSpinner.style.display = "none";
       console.error(error);
     }
   }

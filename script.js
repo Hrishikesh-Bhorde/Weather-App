@@ -11,7 +11,7 @@ window.onload = function () {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "160d07acb9msha260ed112458316p101c35jsn14f8c3f18a2d",
+      "X-RapidAPI-Key": "Replace with your own key",
       "X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
     },
   };
